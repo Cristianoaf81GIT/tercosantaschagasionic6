@@ -1,0 +1,7 @@
+{
+  "name": "terco",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
