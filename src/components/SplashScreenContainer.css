@@ -6,9 +6,10 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  -webkit-animation: up 0.25s linear both;
-  animation: up 0.25s linear both;
+  -webkit-animation: up 500ms linear both;
+  animation: up 500ms linear both;
   overflow-y: hidden;
+  transition: transform .1ms;
 }
 
 .container strong {
@@ -38,10 +39,11 @@
 
 @keyframes up {
     from {       
-        opacity: 0.0;        
+        opacity: 0.0;                
     }
+    
     to {
-        opacity: 1.0;
+        opacity: 1.0;        
     }    
 }
 
