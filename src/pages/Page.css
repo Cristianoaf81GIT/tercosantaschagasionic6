@@ -1,0 +1,24 @@
+.content-title {
+    color: var(--ion-color-primary-tint) !important;
+}
+
+.content-title-h1 {
+    text-align: center;
+    margin-top: 0;
+    height: auto;
+    /* font-size: 1.1rem; */
+    color: var(--ion-color-primary-tint) !important;    
+}
+
+.content-body {
+    text-align: justify;
+    text-justify: distribute;
+    margin-top: 0;
+    padding: 0;
+    color: #5d5d5d !important;
+}
+
+.toolbar-icon {
+    color: var(--ion-color-primary-tint) !important;
+    
+}

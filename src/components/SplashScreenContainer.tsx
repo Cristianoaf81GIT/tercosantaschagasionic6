@@ -10,7 +10,7 @@ const SplashScreen: React.FC = () => {
     const TIMEOUT = 0.1666666666666666666666666666667;
     const goToHomeScreen: Function = (): void => {
         setTimeout(() => {
-           history.push('/page/Inbox')
+           history.push('/page/comorezar?title=Como Rezar')
         }, 2000)
     }
 

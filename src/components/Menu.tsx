@@ -12,6 +12,14 @@ import {
 
 import { useLocation } from 'react-router-dom';
 import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import prayIcon from '../components/menu/pray.svg';
+import mondayIcon from '../components/menu/monday.svg';
+import tuesDayIcon from '../components/menu/tuesDay.svg';
+import wednesdayIcon from '../components/menu/wednesday.svg';
+import thursdayIcon from '../components/menu/thursday.svg';
+import fridayIcon from '../components/menu/friday.svg';
+import saturdayIcon from '../components/menu/saturday.svg';
+import sundayIcon from '../components/menu/sunday.svg';
 import './Menu.css';
 
 interface AppPage {
@@ -23,40 +31,52 @@ interface AppPage {
 
 const appPages: AppPage[] = [
   {
-    title: 'Inbox',
-    url: '/page/Inbox',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp
+    title: 'Como Rezar',
+    url: '/page/comorezar?title=Como Rezar',
+    iosIcon: prayIcon,
+    mdIcon: prayIcon
   },
   {
-    title: 'Outbox',
-    url: '/page/Outbox',
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp
+    title: 'Segunda-Feira',
+    url: '/page/segunda?title=Segunda-feira',
+    iosIcon: mondayIcon,
+    mdIcon: mondayIcon
   },
   {
-    title: 'Favorites',
-    url: '/page/Favorites',
-    iosIcon: heartOutline,
-    mdIcon: heartSharp
+    title: 'Terça-Feira',
+    url: '/page/segunda?title=Terça-feira',
+    iosIcon: tuesDayIcon,
+    mdIcon: tuesDayIcon
   },
   {
-    title: 'Archived',
-    url: '/page/Archived',
-    iosIcon: archiveOutline,
-    mdIcon: archiveSharp
+    title: 'Quarta-Feira',
+    url: '/page/segunda?title=Quarta-feira',
+    iosIcon: wednesdayIcon,
+    mdIcon: wednesdayIcon
   },
   {
-    title: 'Trash',
-    url: '/page/Trash',
-    iosIcon: trashOutline,
-    mdIcon: trashSharp
+    title: 'Quinta-Feria',
+    url: '/page/segunda?title=Quinta-feira',
+    iosIcon: thursdayIcon,
+    mdIcon: thursdayIcon
   },
   {
-    title: 'Spam',
-    url: '/page/Spam',
-    iosIcon: warningOutline,
-    mdIcon: warningSharp
+    title: 'Sexta-Feira',
+    url: '/page/segunda?title=Sexta-feira',
+    iosIcon: fridayIcon,
+    mdIcon: fridayIcon
+  },
+  {
+    title: 'Sábado',
+    url: '/page/segunda?title=sábado',
+    iosIcon: saturdayIcon,
+    mdIcon: saturdayIcon
+  },
+  {
+    title: 'Domingo',
+    url: '/page/segunda?title=domingo',
+    iosIcon: sundayIcon,
+    mdIcon: sundayIcon
   }
 ];
 
@@ -69,21 +89,26 @@ const Menu: React.FC = () => {
     <IonMenu contentId="main" type="overlay">
       <IonContent>
         <IonList id="inbox-list">
-          <IonListHeader>Inbox</IonListHeader>
-          <IonNote>hi@ionicframework.com</IonNote>
+          <IonListHeader>
+            <p 
+              style={{color:'var(--ion-color-primary)'}}
+            >
+              Terço das Santas Chagas
+            </p>
+          </IonListHeader>          
           {appPages.map((appPage, index) => {
             return (
-              <IonMenuToggle key={index} autoHide={false}>
+              <IonMenuToggle key={index} autoHide={false}>               
                 <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
-                  <IonIcon slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
-                  <IonLabel>{appPage.title}</IonLabel>
+                  <IonIcon slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} color="primary"/>
+                  <IonLabel><p>{appPage.title}</p></IonLabel>
                 </IonItem>
               </IonMenuToggle>
             );
           })}
         </IonList>
 
-        <IonList id="labels-list">
+        {/* <IonList id="labels-list">
           <IonListHeader>Labels</IonListHeader>
           {labels.map((label, index) => (
             <IonItem lines="none" key={index}>
@@ -91,7 +116,7 @@ const Menu: React.FC = () => {
               <IonLabel>{label}</IonLabel>
             </IonItem>
           ))}
-        </IonList>
+        </IonList> */}
       </IonContent>
     </IonMenu>
   );
