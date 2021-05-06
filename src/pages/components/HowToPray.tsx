@@ -1,5 +1,7 @@
 import {IonRow, IonCol } from '@ionic/react';
 
+
+
 const HowToPray: React.FC = () => {
     return (
         <IonRow>
@@ -39,7 +41,7 @@ const HowToPray: React.FC = () => {
               deve-se rezar três vezes: Eterno Pai, eu Vos ofereço as Santas
               Chagas de Nosso Senhor Jesus Cristo; Para curar as de nossas
               almas. Amém.</p>
-          </IonCol>
+          </IonCol>          
         </IonRow>
       );
 } 

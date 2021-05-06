@@ -22,3 +22,38 @@
     color: var(--ion-color-primary-tint) !important;
     
 }
+
+.button-text {
+    color: var(--ion-color-tertiary) !important;
+    text-decoration: none;    
+}
+
+.button-text:hover {
+    text-decoration: underline;    
+}
+
+.beads-row {
+    position: absolute;
+    margin: 5px;
+    padding: 0px;
+    bottom: 10%;
+    right: 0%;
+}
+
+.fab {
+    display: none;
+}
+
+@media screen and (min-width: 300px) and (min-height: 600px) {
+    .fab {
+        display: block;
+    }
+}
+
+.swal2-html-container {
+    max-height: 200px;
+    text-align: justify;
+    padding: 10px;
+    text-justify: distribute;
+    overflow-y: auto;
+}
