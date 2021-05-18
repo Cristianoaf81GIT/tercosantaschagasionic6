@@ -11,7 +11,6 @@ import {
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
 import prayIcon from '../components/menu/pray.svg';
 import mondayIcon from '../components/menu/monday.svg';
 import tuesDayIcon from '../components/menu/tuesDay.svg';
@@ -20,6 +19,8 @@ import thursdayIcon from '../components/menu/thursday.svg';
 import fridayIcon from '../components/menu/friday.svg';
 import saturdayIcon from '../components/menu/saturday.svg';
 import sundayIcon from '../components/menu/sunday.svg';
+import Logo from '../components/menu/logo.jpg';
+
 import './Menu.css';
 
 interface AppPage {
@@ -80,7 +81,7 @@ const appPages: AppPage[] = [
   }
 ];
 
-const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+
 
 const Menu: React.FC = () => {
   const location = useLocation();
@@ -89,37 +90,69 @@ const Menu: React.FC = () => {
     <IonMenu contentId="main" type="overlay">
       <IonContent>
         <IonList id="inbox-list">
-          <IonListHeader>
-            <p 
-              style={{color:'var(--ion-color-primary)'}}
-            >
+          <IonListHeader style={ styles.listHeader }>
+            
+            <img src={ Logo } style={ styles.listHeaderImage }/>
+
+            <p style={styles.listHeaderParagraph}>
               Terço das Santas Chagas
             </p>
+
           </IonListHeader>          
+
           {appPages.map((appPage, index) => {
             return (
+              
               <IonMenuToggle key={index} autoHide={false}>               
-                <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
-                  <IonIcon slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} color="primary"/>
+                
+                <IonItem 
+                  className={location.pathname === appPage.url ? 'selected' : ''} 
+                  routerLink={appPage.url} routerDirection="none" 
+                  lines="none" 
+                  detail={false}
+                >
+                  <IonIcon 
+                    slot="start" 
+                    ios={appPage.iosIcon} 
+                    md={appPage.mdIcon} 
+                    color="primary"
+                  />
+                  
                   <IonLabel><p>{appPage.title}</p></IonLabel>
+                
                 </IonItem>
+
               </IonMenuToggle>
             );
           })}
+
         </IonList>
 
-        {/* <IonList id="labels-list">
-          <IonListHeader>Labels</IonListHeader>
-          {labels.map((label, index) => (
-            <IonItem lines="none" key={index}>
-              <IonIcon slot="start" icon={bookmarkOutline} />
-              <IonLabel>{label}</IonLabel>
-            </IonItem>
-          ))}
-        </IonList> */}
       </IonContent>
+
     </IonMenu>
   );
 };
+
+const styles = {
+  listHeader: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column'
+  },
+  listHeaderParagraph: {
+    color:'var(--ion-color-primary)',
+    fontSize: 16
+  },
+  listHeaderImage: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100px',
+    height: '100px',
+    borderRadius: '50%'
+  }
+}
 
 export default Menu;
