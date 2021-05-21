@@ -23,6 +23,8 @@ import Tuesday from "./components/TuesDay";
 import Wednesday from "./components/Wednesday";
 import Thursday from "./components/Thursday";
 import Friday from "./components/Friday";
+import Saturday from "./components/Saturday";
+import Sunday from "./components/Sunday";
 import { BeadsComponent } from "./components/Beads";
 
 import rosaryIcon from "../components/menu/rosary.svg";
@@ -86,6 +88,10 @@ const Page: React.FC = () => {
             return <Thursday/>
           case "Sexta-feira":
             return <Friday/>
+          case "Sábado":
+            return <Saturday/>
+          case "Domingo":
+            return <Sunday/>
           default:
             break;
         }

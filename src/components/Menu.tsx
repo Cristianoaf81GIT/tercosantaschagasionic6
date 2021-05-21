@@ -6,8 +6,7 @@ import {
   IonList,
   IonListHeader,
   IonMenu,
-  IonMenuToggle,
-  IonNote,
+  IonMenuToggle,  
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
@@ -69,13 +68,13 @@ const appPages: AppPage[] = [
   },
   {
     title: 'Sábado',
-    url: '/page/segunda?title=sábado',
+    url: '/page/segunda?title=Sábado',
     iosIcon: saturdayIcon,
     mdIcon: saturdayIcon
   },
   {
     title: 'Domingo',
-    url: '/page/segunda?title=domingo',
+    url: '/page/segunda?title=Domingo',
     iosIcon: sundayIcon,
     mdIcon: sundayIcon
   }

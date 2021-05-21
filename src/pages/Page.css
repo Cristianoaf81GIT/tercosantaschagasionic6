@@ -10,13 +10,14 @@
     color: var(--ion-color-primary-tint) !important;    
 }
 
-.content-body {
+/* .content-body {
     text-align: justify;
     text-justify: distribute;
+    font-size: 0.8rem;
     margin-top: 0;
     padding: 0;
     color: #5d5d5d !important;
-}
+} */
 
 .toolbar-icon {
     color: var(--ion-color-primary-tint) !important;

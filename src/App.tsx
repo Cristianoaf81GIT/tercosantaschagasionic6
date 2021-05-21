@@ -1,6 +1,10 @@
+import { useEffect } from 'react';
 import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
+import { StatusBar } from '@ionic-native/status-bar';
+import { ScreenOrientation } from '@ionic-native/screen-orientation'; 
+import { Insomnia } from '@ionic-native/insomnia';
 import Menu from './components/Menu';
 import Page from './pages/Page';
 
@@ -24,6 +28,26 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 
 const App: React.FC = () => {
+
+  const keepAppAwake = async () => {
+    Insomnia.keepAwake();
+  };
+
+  useEffect(() => {
+    let mounted: boolean = true;
+    if ( mounted ) {
+      StatusBar.overlaysWebView(false);
+      StatusBar.backgroundColorByHexString("#eb445a");
+      ScreenOrientation.lock(ScreenOrientation.ORIENTATIONS.PORTRAIT);
+      keepAppAwake();
+    }  
+
+    return () => {
+      mounted = false;
+    }
+
+  },[false])
+
   return (
     <IonApp>
       <IonReactRouter>

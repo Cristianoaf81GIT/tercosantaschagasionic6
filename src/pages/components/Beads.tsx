@@ -1,6 +1,6 @@
-import { IonRow, IonCol, IonFabButton } from "@ionic/react";
 import React from "react";
-
+import { IonRow, IonCol, IonFabButton } from "@ionic/react";
+import { Vibration } from '@ionic-native/vibration';
 
 export const BeadsComponent: React.FC = () => {
   const [colors, setColors] = React.useState({
@@ -19,6 +19,7 @@ export const BeadsComponent: React.FC = () => {
   const changeColor = (color: string, index: number): void => {
     let ObjectItem = `item${index}`;
     setColors({ ...colors, [ObjectItem]: color });
+    Vibration.vibrate(50);
   };
 
   return (
