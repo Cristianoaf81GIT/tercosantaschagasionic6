@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/cristianoaf81/estudos/ionic6/terco/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v21/values-watch-v21.xml",
+            "outputFile": "C:\\Users\\cristiano.alexandre\\Desktop\\studies\\js\\tercosantaschagasionic6\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v21\\values-watch-v21.xml",
             "map": [
                 {
-                    "source": "/home/cristianoaf81/.gradle/caches/transforms-2/files-2.1/72755d8593c3ca1ed00b11907b10c688/appcompat-1.1.0/res/values-watch-v21/values-watch-v21.xml",
+                    "source": "C:\\Users\\cristiano.alexandre\\.gradle\\caches\\transforms-2\\files-2.1\\72755d8593c3ca1ed00b11907b10c688\\appcompat-1.1.0\\res\\values-watch-v21\\values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",

@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { IonButton, IonRow, IonCol, useIonAlert } from "@ionic/react";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 const Thursday: React.FC = (): JSX.Element => {
   const [alert] = useIonAlert();
@@ -51,7 +51,7 @@ const Thursday: React.FC = (): JSX.Element => {
            se não permanecer na videira. Assim também vós: não podeis tampouco dar fruto, 
            se não permanecerdes em mim. 5.Eu sou a videira; vós, os ramos. 
            Quem permanecer em mim e eu nele, esse dá muito fruto; porque 
-           sem mim nada podeis fazer. ADVERTISEMENT 6.Se alguém não permanecer 
+           sem mim nada podeis fazer.  6.Se alguém não permanecer 
            em mim será lançado fora, como o ramo. Ele secará e hão de ajuntá-lo 
            e lançá-lo ao fogo, e será queimado."
          `,
@@ -66,7 +66,12 @@ const Thursday: React.FC = (): JSX.Element => {
           3.Ele procurava ver quem era Jesus, mas não o conseguia por causa da multidão, 
           porque era de baixa estatura. 4.Ele correu adiante, subiu a um sicômoro para o ver, 
           quando ele passasse por ali. 5.Chegando Jesus àquele lugar e levantando os olhos, 
-          viu-o e disse-lhe: “Zaqueu, desce depressa, porque é preciso que eu fique hoje em tua casa.” ADVERTISEMENT 6.Ele desceu a toda a pressa e recebeu-o alegremente. 7.Vendo isso, todos murmuravam e diziam: “Ele vai hospedar-se em casa de um pecador...”. 8.Zaqueu, entretanto, de pé diante do Senhor, disse-lhe: “Senhor, vou dar a metade dos meus bens aos pobres e, se tiver defraudado alguém, restituirei o quádruplo”. 9.Disse-lhe Jesus: “Hoje entrou a salvação nesta casa, porquanto também este é filho de Abraão. 10.Pois o Filho do Homem veio procurar e salvar o que estava perdido”."
+          viu-o e disse-lhe: “Zaqueu, desce depressa, porque é preciso que eu fique hoje em tua casa.” 
+          6.Ele desceu a toda a pressa e recebeu-o alegremente. 7.Vendo isso, todos murmuravam e diziam: 
+          “Ele vai hospedar-se em casa de um pecador...”. 8.Zaqueu, entretanto, de pé diante do Senhor, 
+          disse-lhe: “Senhor, vou dar a metade dos meus bens aos pobres e, se tiver defraudado 
+          alguém, restituirei o quádruplo”. 9.Disse-lhe Jesus: “Hoje entrou a salvação nesta casa, 
+          porquanto também este é filho de Abraão. 10.Pois o Filho do Homem veio procurar e salvar o que estava perdido”."
           `,
         },
       ],
@@ -87,34 +92,35 @@ const Thursday: React.FC = (): JSX.Element => {
         },
       ],
     ]);
-    if (screenWidth <= 1024 && /Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        
-        alert({
-          cssClass: 'alert-body',
-          header: ThursdayAlertText.get(item).title,
-          message: ThursdayAlertText.get(item).text,
-          buttons: ["fechar"],
-          onDidDismiss: () => {},
-        });
-        
+    if (
+      screenWidth <= 1024 &&
+      /Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      alert({
+        cssClass: "alert-body",
+        header: ThursdayAlertText.get(item).title,
+        message: ThursdayAlertText.get(item).text,
+        buttons: ["fechar"],
+        onDidDismiss: () => {},
+      });
     } else {
-        
-        Swal.fire( {
-            title: ThursdayAlertText.get(item).title,
-            text: ThursdayAlertText.get(item).text,
-            confirmButtonText: 'fechar',
-            confirmButtonColor: 'var(--ion-color-primary)',
-            backdrop: false
-        } ); 
+      Swal.fire({
+        title: ThursdayAlertText.get(item).title,
+        text: ThursdayAlertText.get(item).text,
+        confirmButtonText: "fechar",
+        confirmButtonColor: "var(--ion-color-primary)",
+        backdrop: false,
+      });
     }
-    
   };
 
   useEffect(() => {
-    window.addEventListener('resize', () => {
-        setScreeWidth(window.innerWidth);
+    window.addEventListener("resize", () => {
+      setScreeWidth(window.innerWidth);
     });
-    return window.removeEventListener('resize', () => {});
+    return window.removeEventListener("resize", () => {});
   }, [screenWidth]);
 
   return (
@@ -140,25 +146,30 @@ const Thursday: React.FC = (): JSX.Element => {
       <IonCol size="12">
         <p className="content-body">
           3º Jesus se apresenta como a videira verdadeira. <br />
-          <p className="button-text" onClick={() => showModal(3)}>(JO 15 1-6.)</p>
+          <p className="button-text" onClick={() => showModal(3)}>
+            (JO 15 1-6.)
+          </p>
         </p>
       </IonCol>
 
       <IonCol size="12">
         <p className="content-body">
           4º O encontro de Jesus com Zaqueu. <br />
-          <p className="button-text" onClick={() => showModal(4)}>(LC 19 1-10.)</p>
+          <p className="button-text" onClick={() => showModal(4)}>
+            (LC 19 1-10.)
+          </p>
         </p>
       </IonCol>
 
       <IonCol size="12">
         <p className="content-body">
           5º Jesus anda sobre as águas. <br />
-          <p className="button-text" onClick={() => showModal(5)}>(MT 14 22-27.)</p>
+          <p className="button-text" onClick={() => showModal(5)}>
+            (MT 14 22-27.)
+          </p>
         </p>
       </IonCol>
-      
-    </IonRow>       
+    </IonRow>
   );
 };
 
